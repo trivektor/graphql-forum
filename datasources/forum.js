@@ -16,4 +16,8 @@ export default class Forum extends RESTDataSource {
       description
     });
   }
+
+  async destroy(id) {
+    return this.delete(`forums/${id}`);
+  }
 }

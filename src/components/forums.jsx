@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import { Card, AnchorButton } from '@blueprintjs/core';
-
-const getForums = gql`
-  query getForums {
-    forums {
-      id
-      topic
-      description
-    }
-  }
-`;
+import { AnchorButton } from '@blueprintjs/core';
+import { deleteForum, getForums } from '../graphql';
+import Forum from './forum';
 
 class Forums extends Component {
   render() {
@@ -28,10 +20,7 @@ class Forums extends Component {
                 <div>
                   {
                     data.forums.map(({ id, topic, description }) => (
-                      <Card key={id} style={{ margin: '20px 0' }}>
-                        <h4>{topic}</h4>
-                        <p>{description}</p>
-                      </Card>
+                      <Forum key={id} id={id} topic={topic} description={description} />
                     ))
                   }
                 </div>

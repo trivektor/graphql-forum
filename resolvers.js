@@ -12,5 +12,11 @@ export const resolvers = {
 
       return await dataSources.forum.create(topic, description);
     },
+
+    deleteForum: async (_, args, { dataSources }) => {
+      const { id } = args;
+
+      return await dataSources.forum.destroy(id);
+    }
   }
 };

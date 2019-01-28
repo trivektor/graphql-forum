@@ -7,6 +7,7 @@ export const typeDefs = gql`
 
   type Mutation {
     createForum(topic: String!, description: String!): Forum!
+    deleteForum(id: ID!): Forum!
   }
 
   type Forum {

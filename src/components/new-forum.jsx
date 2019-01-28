@@ -55,6 +55,7 @@ class NewForum extends Component {
                   <FormGroup
                     label="Topic">
                     <InputGroup
+                      autoFocus
                       value={topic}
                       onChange={(event) => this.setState({ topic: event.target.value })} />
                   </FormGroup>
